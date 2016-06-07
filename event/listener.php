@@ -321,11 +321,11 @@ class listener implements EventSubscriberInterface
 			'USER_BANK_POINTS'		=> $this->functions_points->number_format_points($holding),
 			'L_USER_NO_BANK_ACC'	=> sprintf($this->user->lang['BANK_NO_ACCOUNT'], $points_values['bank_name']),
 			'L_MOD_USER_POINTS'		=> ($this->auth->acl_get('a_') || $this->auth->acl_get('m_chg_points')) ? sprintf($this->user->lang['POINTS_MODIFY']) : '',
-			'U_POINTS_MODIFY'		=> ($this->auth->acl_get('a_') || $this->auth->acl_get('m_chg_points')) ? $this->helper->route('dmzx_ultimatepoints_controller', array('mode' => 'points_edit', 'user_id' => $user_id, 'adm_points' => '1')) : '',
+			'U_POINTS_MODIFY'		=> '#',#($this->auth->acl_get('a_') || $this->auth->acl_get('m_chg_points')) ? $this->helper->route('dmzx_ultimatepoints_controller', array('mode' => 'points_edit', 'user_id' => $user_id, 'adm_points' => '1')) : '',
 			'L_MOD_USER_BANK'		=> ($this->auth->acl_get('a_') || $this->auth->acl_get('m_chg_bank')) ? sprintf($this->user->lang['POINTS_MODIFY']) : '',
-			'U_BANK_MODIFY'			=> ($this->auth->acl_get('a_') || $this->auth->acl_get('m_chg_points')) ? $this->helper->route('dmzx_ultimatepoints_controller', array('mode' => 'bank_edit', 'user_id' => $user_id, 'adm_points' => '1')) : '',
+			'U_BANK_MODIFY'			=> '#',#($this->auth->acl_get('a_') || $this->auth->acl_get('m_chg_points')) ? $this->helper->route('dmzx_ultimatepoints_controller', array('mode' => 'bank_edit', 'user_id' => $user_id, 'adm_points' => '1')) : '',
 			'L_DONATE'				=> ($this->auth->acl_get('u_use_points')) ? sprintf($this->user->lang['POINTS_DONATE']) : '',
-			'U_POINTS_DONATE'		=> ($this->auth->acl_get('a_') || $this->auth->acl_get('m_chg_points')) ? $this->helper->route('dmzx_ultimatepoints_controller', array('mode' => 'transfer', 'i' => $user_id, 'adm_points' => '1')) : '',
+			'U_POINTS_DONATE'		=> '#',#($this->auth->acl_get('a_') || $this->auth->acl_get('m_chg_points')) ? $this->helper->route('dmzx_ultimatepoints_controller', array('mode' => 'transfer', 'i' => $user_id, 'adm_points' => '1')) : '',
 			'P_NAME'				=> $this->config['points_name'],
 			'USE_POINTS'			=> $this->config['points_enable'],
 			'USE_IMAGES_POINTS'		=> $points_config['images_memberlist_enable'],
@@ -469,8 +469,8 @@ class listener implements EventSubscriberInterface
 			$points_config = $this->cache->get('points_config');
 
 			$this->template->assign_vars(array(
-				'U_POINTS'				=> $this->helper->route('dmzx_ultimatepoints_controller'),
-				'U_POINTS_LIST'			=> $this->helper->route('dmzx_ultimatepoints_list_controller'),
+				'U_POINTS'				=> '#',#$this->helper->route('dmzx_ultimatepoints_controller'),
+				'U_POINTS_LIST'			=> '#',#$this->helper->route('dmzx_ultimatepoints_list_controller'),
 				'POINTS_LINK'			=> $this->config['points_name'],
 				'USER_POINTS'			=> sprintf($this->functions_points->number_format_points($this->user->data['user_points'])),
 				'S_POINTS_ENABLE'		=> $this->config['points_enable'],
